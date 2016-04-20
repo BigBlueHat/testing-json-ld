@@ -1,0 +1,22 @@
+{
+  "@context": "https://github.io/w3c/annotation/testing/context.jsonld",
+  "id": "manifest-model",
+  "type": "mf:Manifest",
+  "label": "Web Annotation Data Model Tests",
+  "comment": "Runs a battery of test patterns against multiple annotations in JSON-LD format. Each test entry identifies a procedure for generating an annotation, and the results are matched against a set of patterns.",
+  "entries": [
+    {
+      "id": "manifest-model#test001",
+      "type": "ant:SchemaTest",
+      "name": "Simple Annotation",
+      "approval": "ant:Proposed",
+      "action": "test001-in.jsonld",
+      "result": [
+        "verify-context-present.json",
+        "verify-type-Annotation.json",
+        "verify-body-present-or-empty.json"
+        "verify-target-present.json",
+      ]
+    }
+  ]
+}
