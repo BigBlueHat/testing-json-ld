@@ -9,6 +9,7 @@
       "id": "manifest-model#test001",
       "type": "ant:SchemaTest",
       "name": "Simple Annotation",
+      "comment": "Tests run on the 'action' file, but could be specified by instructing an endpoint to deliver such a file to the testing framework, either manually or automatically",
       "approval": "ant:Proposed",
       "action": "test001-in.jsonld",
       "result": [
