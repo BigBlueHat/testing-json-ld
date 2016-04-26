@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "title": "Verify annotation has @context",
+  "title": "Verify annotation is of `type` Annotation",
   "type": "object",
   "properties": {
     "type": {
@@ -11,10 +11,12 @@
         },
         {
           "type": "array",
-          "anyOf": {
-            "type": "string",
-            "pattern": "^Annotation$"
-          }
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^Annotation$"
+            }
+          ]
         }
       ],
       "not": {"type": "object"}

@@ -10,9 +10,11 @@
         },
         {
           "type": "array",
-          "anyOf": {
-            "type": "string"
-          }
+          "anyOf": [
+            {
+              "type": "string"
+            }
+          ]
         }
       ],
       "not": {"type": "object"}

@@ -1,0 +1,35 @@
+{
+  "name": "testing-json-ld",
+  "version": "0.0.1",
+  "description": "Testing JSON-LD with JSON Schema and friends.",
+  "main": "src/index.js",
+  "scripts": {
+    "anno": "gulp --input=web-annotation/input/* --tests=web-annotation/tests/*",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BigBlueHat/testing-json-ld.git"
+  },
+  "keywords": [
+    "JSON",
+    "JSON-LD",
+    "JSON",
+    "Schema",
+    "validation",
+    "testing"
+  ],
+  "author": "BigBlueHat <byoung@bigbluehat.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BigBlueHat/testing-json-ld/issues"
+  },
+  "homepage": "https://github.com/BigBlueHat/testing-json-ld#readme",
+  "dependencies": {
+    "ajv": "^4.0.4",
+    "glob": "^7.0.3",
+    "gulp": "^3.9.1",
+    "vinyl-source-stream": "^1.1.0",
+    "yargs": "^4.6.0"
+  }
+}
