@@ -1,0 +1,17 @@
+{
+  "@context": "http://www.w3.org/ns/anno.jsonld",
+  "id": "http://example.org/anno14",
+  "type": "Annotation",
+  "motivation": "bookmarking",
+  "body": [
+    {
+      "text": "readme",
+      "purpose": "tagging"
+    },
+    {
+      "text": "A good description of the topic that bears further investigation",
+      "purpose": "describing"
+    }
+  ],
+  "target": "http://example.com/page1"
+}
