@@ -3,7 +3,9 @@
 [![GitHub license](https://img.shields.io/github/license/BigBlueHat/testing-json-ld.svg?style=flat-square)](http://github.com/BigBlueHat/testing-json-ld)
 [![Patreon](https://img.shields.io/badge/donate-patreon-orange.svg?style=flat-square)](https://www.patreon.com/BigBlueHat)
 
-This is born out of conversations with @gkellog and @halindrome
+This is born out of conversations with
+[@gkellog](http://github.com/gkellog) and
+[@halindrome](http://github.com/halindrome)
 about testing the
 [Web Annotation Data Model](http://www.w3.org/TR/annotation-model/).
 
