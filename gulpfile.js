@@ -5,6 +5,7 @@ var fs = require('fs');
 var Ajv = require('ajv');
 var argv = require('yargs').argv;
 var colors = require('colors');
+var jsonld = require('jsonld');
 var glob = require('glob');
 var gulp = require('gulp');
 
@@ -40,9 +41,20 @@ gulp.task('default', function() {
       inputs.forEach(function(input) {
         // report what's beeing tested
         console.log('Testing ' + input);
+        var json = JSON.parse(fs.readFileSync(input));
         validators.forEach(function(test) {
           // test it!
-          test(JSON.parse(fs.readFileSync(input)));
+          test(json);
+          // dump nquads
+          // TODO: collect results then output, so nquads stay with validation
+          // TODO: eventually validate this to (obviously...)
+          jsonld.toRDF(json, {format: 'application/nquads'},
+            function(err, nquads) {
+              console.log('NQuads for ' + input);
+              if (!err) console.log(nquads);
+              else console.log(err.red);
+            }
+          );
         });
       });
     });
