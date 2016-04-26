@@ -31,8 +31,8 @@ gulp.task('default', function() {
         var schema = JSON.parse(fs.readFileSync(validator));
         var validate = ajv.compile(schema);
         var valid = validate(data);
-        if (valid) console.log('Passed: '.green + schema.title);
-        else console.log('Invalid: '.red + ajv.errorsText(validate.errors));
+        if (valid) return 'Passed: '.green + schema.title;
+        else return 'Invalid: '.red + ajv.errorsText(validate.errors);
       });
     });
 
@@ -40,22 +40,26 @@ gulp.task('default', function() {
     glob(input_dir, function(err, inputs) {
       inputs.forEach(function(input) {
         // report what's beeing tested
-        console.log('Testing ' + input);
         var json = JSON.parse(fs.readFileSync(input));
+        var validations = [];
         validators.forEach(function(test) {
           // test it!
-          test(json);
-          // dump nquads
-          // TODO: collect results then output, so nquads stay with validation
-          // TODO: eventually validate this to (obviously...)
-          jsonld.toRDF(json, {format: 'application/nquads'},
-            function(err, nquads) {
-              console.log('NQuads for ' + input);
-              if (!err) console.log(nquads);
-              else console.log(err.red);
-            }
-          );
+          validations.push(test(json));
         });
+        // dump nquads
+        // TODO: collect results then output, so nquads stay with validation
+        // TODO: eventually validate this to (obviously...)
+        jsonld.toRDF(json, {format: 'application/nquads'},
+          function(err, nquads) {
+            console.log('Results for ' + input.blue);
+            validations.forEach(function(msg) {
+              console.log(msg);
+            });
+            console.log("NQuads:".grey);
+            if (!err) console.log(nquads);
+            else console.log(err.red);
+          }
+        );
       });
     });
   });
