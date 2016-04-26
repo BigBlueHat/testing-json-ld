@@ -19,6 +19,10 @@ The hope is to create something flexible and general enough to test
 JSON-LD specifications against their various MUSTs. Short term, Web Annotation
 Data Model is the focus.
 
+## Screenshot
+
+![Console Output Screenshot](screenshot.png)
+
 ## Usage
 
 Add docs to the `input` directory, and JSON Schemas to the `tests` directiory.
